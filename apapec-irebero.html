@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APAPEC-IREBRO School</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0a1a2f;
+  color: #e0e6ed;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #102b46;
+  padding: 20px;
+  text-align: center;
+}
+header h1 { color: #4da6ff; font-size: 2.5rem; }
+nav ul { list-style: none; margin-top: 10px; }
+nav ul li { display: inline; margin: 0 15px; }
+nav ul li a { color: #e0e6ed; text-decoration: none; }
+nav ul li a:hover { color: #4da6ff; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #0a1a2f, #102b46);
+}
+.hero h2 { color: #4da6ff; margin-bottom: 15px; }
+.hero img { margin-top: 20px; max-width: 100%; border-radius: 10px; }
+.btn {
+  display: inline-block; padding: 10px 20px;
+  background-color: #4da6ff; color: #0a1a2f;
+  text-decoration: none; border-radius: 5px; font-weight: bold;
+}
+.btn:hover { background-color: #3399ff; }
+
+/* Sections */
+section { padding: 40px 20px; text-align: center; }
+h3 { color: #4da6ff; margin-bottom: 20px; }
+
+/* Cards */
+.service-cards, .teacher-cards, .testimonial-cards {
+  display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+}
+.card {
+  background-color: #102b46;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.card h4 { color: #4da6ff; margin-bottom: 10px; }
+
+/* Footer */
+footer {
+  background-color: #102b46;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>APAPEC-IREBRO</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#teachers">Teachers</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to APAPEC-IREBRO</h2>
+    <p>Empowering students with knowledge, discipline, and innovation.</p>
+    <a href="#about" class="btn">Learn More</a>
+    <img src="images/school-hero.jpg" alt="School Campus">
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <div class="service-cards">
+      <div class="card">
+        <img src="images/library.jpg" alt="Library">
+        <h4>Modern Library</h4>
+        <p>Access thousands of books and digital resources.</p>
+      </div>
+      <div class="card">
+        <img src="images/lab.jpg" alt="Science Lab">
+        <h4>Science Labs</h4>
+        <p>Hands-on experiments in state-of-the-art labs.</p>
+      </div>
+      <div class="card">
+        <img src="images/sports.jpg" alt="Sports">
+        <h4>Sports Facilities</h4>
+        <p>Encouraging fitness and teamwork through athletics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <h3>About Us</h3>
+    <img src="images/about.jpg" alt="Students Learning">
+    <p>
+      At APAPEC-IREBRO, we strive to provide quality education in a supportive environment. 
+      Our mission is to nurture future leaders with strong values and academic excellence.
+    </p>
+  </section>
+
+  <!-- Best Teachers Section -->
+  <section id="teachers" class="teachers">
+    <h3>Meet Our Best Teachers</h3>
+    <div class="teacher-cards">
+      <div class="card">
+        <img src="images/teacher1.jpg" alt="Teacher 1">
+        <h4>Dr. Jane Doe</h4>
+        <p>Mathematics Specialist with 15 years of experience.</p>
+      </div>
+      <div class="card">
+        <img src="images/teacher2.jpg" alt="Teacher 2">
+        <h4>Mr. John Smith</h4>
+        <p>Passionate English Literature educator.</p>
+      </div>
+      <div class="card">
+        <img src="images/teacher3.jpg" alt="Teacher 3">
+        <h4>Mrs. Mary Johnson</h4>
+        <p>Science teacher inspiring curiosity and discovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h3>What Our Students Say</h3>
+    <div class="testimonial-cards">
+      <div class="card">
+        <p>"APAPEC-IREBRO gave me the confidence to pursue my dreams!"</p>
+        <h4>- Alice, Alumni</h4>
+      </div>
+      <div class="card">
+        <p>"The teachers here truly care about our success."</p>
+        <h4>- David, Student</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2026 APAPEC-IREBRO School. All rights reserved.</p>
+  </footer>
+</body>
+</html>
