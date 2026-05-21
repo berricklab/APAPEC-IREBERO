@@ -14,9 +14,41 @@ rel="stylesheet"
 
 <style>
 
-/* =========================
-   RESET
-========================= */
+/* =========================================
+THEME VARIABLES
+========================================= */
+
+:root{
+
+  --bg:#07111f;
+  --card:#0f1c2e;
+  --text:#f1f5f9;
+  --primary:#60a5fa;
+  --secondary:#17263d;
+  --footer:#020617;
+  --shadow:rgba(0,0,0,0.4);
+
+}
+
+/* =========================================
+LIGHT MODE
+========================================= */
+
+body.light-mode{
+
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --primary:#2563eb;
+  --secondary:#e2e8f0;
+  --footer:#dbeafe;
+  --shadow:rgba(0,0,0,0.1);
+
+}
+
+/* =========================================
+RESET
+========================================= */
 
 *{
   margin:0;
@@ -27,47 +59,72 @@ rel="stylesheet"
 
 body{
   font-family:'Poppins',sans-serif;
-  background:#07111f;
-  color:#f1f5f9;
+  background:var(--bg);
+  color:var(--text);
   overflow-x:hidden;
+  transition:0.4s;
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
+/* =========================================
+FLUID TYPOGRAPHY
+========================================= */
+
+h1{
+  font-size:clamp(2rem,6vw,5rem);
+}
+
+h2{
+  font-size:clamp(1.5rem,4vw,3rem);
+}
+
+p{
+  font-size:clamp(0.95rem,2vw,1.05rem);
+}
+
+/* =========================================
+SCROLLBAR
+========================================= */
 
 ::-webkit-scrollbar{
   width:10px;
 }
 
 ::-webkit-scrollbar-track{
-  background:#07111f;
+  background:var(--bg);
 }
 
 ::-webkit-scrollbar-thumb{
-  background:#3b82f6;
+  background:var(--primary);
   border-radius:20px;
 }
 
-/* =========================
-   GLOBAL IMAGES
-========================= */
+/* =========================================
+GLOBAL IMAGES
+========================================= */
 
 img{
   max-width:100%;
   display:block;
 }
 
-/* =========================
-   HEADER
-========================= */
+.hero,
+.about img,
+.card img,
+.gallery-item img{
+  width:100%;
+  height:auto;
+}
+
+/* =========================================
+HEADER
+========================================= */
 
 header{
   position:fixed;
   top:0;
   width:100%;
   z-index:1000;
-  background:rgba(7,17,31,0.95);
+  background:rgba(7,17,31,0.92);
   backdrop-filter:blur(10px);
   padding:15px 7%;
   display:flex;
@@ -80,7 +137,7 @@ header{
 .logo{
   font-size:1.8rem;
   font-weight:700;
-  color:#60a5fa;
+  color:var(--primary);
 }
 
 nav ul{
@@ -91,7 +148,7 @@ nav ul{
 }
 
 nav a{
-  color:#f1f5f9;
+  color:var(--text);
   text-decoration:none;
   font-weight:500;
   transition:0.3s;
@@ -105,7 +162,7 @@ nav a::after{
   bottom:-5px;
   width:0%;
   height:2px;
-  background:#60a5fa;
+  background:var(--primary);
   transition:0.3s;
 }
 
@@ -114,23 +171,55 @@ nav a:hover::after{
 }
 
 nav a:hover{
-  color:#60a5fa;
+  color:var(--primary);
 }
 
+/* =========================================
+BUTTONS
+========================================= */
+
+.btn,
 .login-nav-btn{
-  background:#2563eb;
-  padding:10px 22px;
-  border-radius:30px;
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:50px;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.4s;
+  border:none;
+  cursor:pointer;
 }
 
+.btn:hover,
 .login-nav-btn:hover{
-  background:#3b82f6;
-  color:white !important;
+  transform:translateY(-4px);
 }
 
-/* =========================
-   HERO
-========================= */
+/* =========================================
+THEME BUTTON
+========================================= */
+
+.theme-toggle{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  border:none;
+  cursor:pointer;
+  font-size:1rem;
+  background:#2563eb;
+  color:white;
+  transition:0.4s;
+}
+
+.theme-toggle:hover{
+  transform:rotate(180deg);
+}
+
+/* =========================================
+HERO
+========================================= */
 
 .hero{
   min-height:100vh;
@@ -154,40 +243,21 @@ nav a:hover{
 }
 
 .hero h1{
-  font-size:4rem;
   margin-bottom:20px;
 }
 
 .hero h1 span{
-  color:#60a5fa;
+  color:var(--primary);
 }
 
 .hero p{
-  font-size:1.2rem;
   margin-bottom:35px;
   color:#dbeafe;
 }
 
-.btn{
-  display:inline-block;
-  padding:14px 32px;
-  background:linear-gradient(135deg,#3b82f6,#2563eb);
-  color:white;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.4s;
-  box-shadow:0 10px 25px rgba(59,130,246,0.3);
-}
-
-.btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(59,130,246,0.5);
-}
-
-/* =========================
-   GENERAL SECTION
-========================= */
+/* =========================================
+GENERAL SECTION
+========================================= */
 
 section{
   padding:100px 7%;
@@ -195,14 +265,13 @@ section{
 
 .section-title{
   text-align:center;
-  font-size:2.5rem;
   margin-bottom:60px;
-  color:#60a5fa;
+  color:var(--primary);
 }
 
-/* =========================
-   CARDS
-========================= */
+/* =========================================
+CARDS
+========================================= */
 
 .cards{
   display:grid;
@@ -211,7 +280,7 @@ section{
 }
 
 .card{
-  background:#0f1c2e;
+  background:var(--card);
   border-radius:20px;
   overflow:hidden;
   transition:0.5s;
@@ -228,11 +297,10 @@ section{
 
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.4);
+  box-shadow:0 15px 35px var(--shadow);
 }
 
 .card img{
-  width:100%;
   aspect-ratio:16/10;
   object-fit:cover;
 }
@@ -243,16 +311,16 @@ section{
 
 .card h3{
   margin-bottom:10px;
-  color:#60a5fa;
+  color:var(--primary);
 }
 
 .card p{
-  color:#cbd5e1;
+  color:var(--text);
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* =========================================
+ABOUT
+========================================= */
 
 .about-container{
   display:grid;
@@ -262,25 +330,22 @@ section{
 }
 
 .about img{
-  width:100%;
   border-radius:20px;
   object-fit:cover;
 }
 
 .about-text h2{
-  color:#60a5fa;
+  color:var(--primary);
   margin-bottom:20px;
-  font-size:2.3rem;
 }
 
 .about-text p{
-  color:#d1d5db;
   line-height:1.9;
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* =========================================
+GALLERY
+========================================= */
 
 .gallery-grid{
   display:grid;
@@ -294,7 +359,6 @@ section{
 }
 
 .gallery-item img{
-  width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
   transition:0.5s;
@@ -304,37 +368,9 @@ section{
   transform:scale(1.1);
 }
 
-/* =========================
-   ACHIEVEMENTS
-========================= */
-
-.achievement-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-
-.achievement-box{
-  background:#0f1c2e;
-  padding:40px 20px;
-  border-radius:20px;
-  text-align:center;
-  transition:0.4s;
-}
-
-.achievement-box:hover{
-  transform:translateY(-10px);
-}
-
-.achievement-box h3{
-  font-size:3rem;
-  color:#60a5fa;
-  margin-bottom:10px;
-}
-
-/* =========================
-   EVENTS
-========================= */
+/* =========================================
+EVENTS
+========================================= */
 
 .event-container{
   display:grid;
@@ -343,7 +379,7 @@ section{
 }
 
 .event-card{
-  background:#0f1c2e;
+  background:var(--card);
   padding:30px;
   border-radius:20px;
   transition:0.4s;
@@ -354,7 +390,7 @@ section{
 }
 
 .event-card h3{
-  color:#60a5fa;
+  color:var(--primary);
   margin-bottom:15px;
 }
 
@@ -364,18 +400,9 @@ section{
   color:#93c5fd;
 }
 
-/* =========================
-   TESTIMONIALS
-========================= */
-
-.testimonial{
-  text-align:center;
-  padding:30px;
-}
-
-/* =========================
-   FAQ
-========================= */
+/* =========================================
+FAQ
+========================================= */
 
 .faq-container{
   max-width:900px;
@@ -384,7 +411,7 @@ section{
 
 .faq-item{
   margin-bottom:20px;
-  background:#0f1c2e;
+  background:var(--card);
   border-radius:15px;
   overflow:hidden;
 }
@@ -393,7 +420,7 @@ section{
   width:100%;
   background:none;
   border:none;
-  color:white;
+  color:var(--text);
   padding:20px;
   text-align:left;
   font-size:1rem;
@@ -408,12 +435,11 @@ section{
 
 .faq-answer p{
   padding:20px;
-  color:#cbd5e1;
 }
 
-/* =========================
-   NEWSLETTER
-========================= */
+/* =========================================
+NEWSLETTER
+========================================= */
 
 .newsletter-box{
   background:linear-gradient(135deg,#1d4ed8,#2563eb);
@@ -447,9 +473,9 @@ section{
   cursor:pointer;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* =========================================
+CONTACT
+========================================= */
 
 .contact-container{
   display:grid;
@@ -459,7 +485,7 @@ section{
 
 .contact-info,
 .contact-form{
-  background:#0f1c2e;
+  background:var(--card);
   padding:40px;
   border-radius:20px;
 }
@@ -471,16 +497,18 @@ section{
 }
 
 .contact-form input,
-.contact-form textarea{
+.contact-form textarea,
+.login-box input{
   padding:15px;
   border:none;
   border-radius:12px;
   outline:none;
-  background:#17263d;
-  color:white;
+  background:var(--secondary);
+  color:var(--text);
 }
 
-.contact-form button{
+.contact-form button,
+.login-box button{
   padding:15px;
   border:none;
   border-radius:12px;
@@ -489,9 +517,9 @@ section{
   cursor:pointer;
 }
 
-/* =========================
-   LOGIN MODAL
-========================= */
+/* =========================================
+LOGIN MODAL
+========================================= */
 
 .login-modal{
   position:fixed;
@@ -515,7 +543,7 @@ section{
 }
 
 .login-box{
-  background:#0f1c2e;
+  background:var(--card);
   width:90%;
   max-width:420px;
   padding:40px;
@@ -534,23 +562,6 @@ section{
   gap:20px;
 }
 
-.login-box input{
-  padding:15px;
-  border:none;
-  border-radius:12px;
-  background:#17263d;
-  color:white;
-}
-
-.login-box button{
-  padding:15px;
-  border:none;
-  border-radius:12px;
-  background:#2563eb;
-  color:white;
-  cursor:pointer;
-}
-
 .close-btn{
   position:absolute;
   top:10px;
@@ -559,20 +570,19 @@ section{
   cursor:pointer;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* =========================================
+FOOTER
+========================================= */
 
 footer{
-  background:#020617;
+  background:var(--footer);
   text-align:center;
   padding:30px;
-  color:#94a3b8;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* =========================================
+ANIMATIONS
+========================================= */
 
 .floating{
   animation:floating 4s ease-in-out infinite;
@@ -595,42 +605,128 @@ footer{
   }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================
+RESPONSIVE DESIGN
+========================================= */
 
-@media(max-width:900px){
+@media (min-width:1400px){
+
+  body{
+    font-size:18px;
+  }
+
+  section{
+    padding:120px 10%;
+  }
+
+}
+
+@media (max-width:992px){
+
+  header{
+    padding:15px 5%;
+  }
+
+  .hero{
+    padding-top:160px;
+  }
+
+  .about-container{
+    grid-template-columns:1fr;
+  }
+
+  .about-text{
+    text-align:center;
+  }
+
+}
+
+@media (max-width:768px){
 
   header{
     flex-direction:column;
-    gap:15px;
+    gap:20px;
+  }
+
+  nav{
+    width:100%;
   }
 
   nav ul{
-    flex-wrap:wrap;
     justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
   }
 
-  .hero h1{
-    font-size:2.7rem;
-  }
-}
-
-@media(max-width:600px){
-
-  .hero h1{
-    font-size:2rem;
+  .hero{
+    min-height:90vh;
+    padding:140px 20px 80px;
   }
 
-  .newsletter-form input{
+  section{
+    padding:80px 20px;
+  }
+
+  .cards,
+  .gallery-grid,
+  .event-container,
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+
+  .newsletter-form{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button{
     width:100%;
   }
+
+}
+
+@media (max-width:480px){
+
+  .logo{
+    font-size:1.4rem;
+  }
+
+  .card-content{
+    padding:20px;
+  }
+
+  .newsletter-box{
+    padding:40px 20px;
+  }
+
+}
+
+/* =========================================
+PERFORMANCE
+========================================= */
+
+.card,
+.gallery-item img,
+.btn,
+.event-card{
+  will-change:transform;
+}
+
+button,
+.btn,
+nav a{
+  -webkit-tap-highlight-color:transparent;
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- =========================================
+HEADER
+========================================= -->
 
 <header>
 
@@ -651,6 +747,12 @@ APAPEC-IREBRO
 <li><a href="#contact-section">Contact</a></li>
 
 <li>
+<button id="themeToggle" class="theme-toggle">
+🌙
+</button>
+</li>
+
+<li>
 <a href="#" class="login-nav-btn" id="openLogin">
 Login
 </a>
@@ -660,6 +762,10 @@ Login
 </nav>
 
 </header>
+
+<!-- =========================================
+HERO
+========================================= -->
 
 <section class="hero" id="home">
 
@@ -681,6 +787,10 @@ Explore More
 </div>
 
 </section>
+
+<!-- =========================================
+SERVICES
+========================================= -->
 
 <section id="services">
 
@@ -718,6 +828,10 @@ Our Services
 
 </section>
 
+<!-- =========================================
+ABOUT
+========================================= -->
+
 <section class="about" id="about">
 
 <div class="about-container">
@@ -742,6 +856,10 @@ technology, creativity, and innovation.
 </div>
 
 </section>
+
+<!-- =========================================
+TEACHERS
+========================================= -->
 
 <section id="teachers">
 
@@ -779,6 +897,10 @@ Meet Our Teachers
 
 </section>
 
+<!-- =========================================
+GALLERY
+========================================= -->
+
 <section id="gallery">
 
 <h2 class="section-title">
@@ -806,6 +928,10 @@ School Gallery
 </div>
 
 </section>
+
+<!-- =========================================
+EVENTS
+========================================= -->
 
 <section id="events">
 
@@ -836,6 +962,10 @@ Upcoming Events
 </div>
 
 </section>
+
+<!-- =========================================
+FAQ
+========================================= -->
 
 <section id="faq">
 
@@ -877,6 +1007,10 @@ Yes, including sports, debates, arts, and clubs.
 
 </section>
 
+<!-- =========================================
+NEWSLETTER
+========================================= -->
+
 <section id="newsletter">
 
 <div class="newsletter-box">
@@ -906,6 +1040,10 @@ Subscribe
 </div>
 
 </section>
+
+<!-- =========================================
+CONTACT
+========================================= -->
 
 <section id="contact-section">
 
@@ -962,6 +1100,10 @@ Send Message
 
 </section>
 
+<!-- =========================================
+FOOTER
+========================================= -->
+
 <footer>
 
 <p>
@@ -970,7 +1112,9 @@ Send Message
 
 </footer>
 
-<!-- LOGIN MODAL -->
+<!-- =========================================
+LOGIN MODAL
+========================================= -->
 
 <div class="login-modal" id="loginModal">
 
@@ -1012,13 +1156,17 @@ Login
 
 <script>
 
-/* =========================
+/* =========================================
 SCROLL REVEAL
-========================= */
+========================================= */
 
-const cards = document.querySelectorAll('.card');
+const cards =
+document.querySelectorAll('.card');
 
-window.addEventListener('scroll', revealCards);
+window.addEventListener(
+'scroll',
+revealCards
+);
 
 function revealCards(){
 
@@ -1031,17 +1179,20 @@ function revealCards(){
     card.getBoundingClientRect().top;
 
     if(cardTop < triggerBottom){
+
       card.classList.add('show');
+
     }
 
   });
+
 }
 
 revealCards();
 
-/* =========================
+/* =========================================
 FAQ TOGGLE
-========================= */
+========================================= */
 
 const faqQuestions =
 document.querySelectorAll('.faq-question');
@@ -1068,26 +1219,30 @@ faqQuestions.forEach(question => {
 
 });
 
-/* =========================
+/* =========================================
 NEWSLETTER
-========================= */
+========================================= */
 
 const newsletterForm =
 document.querySelector('.newsletter-form');
 
-newsletterForm.addEventListener('submit', (e) => {
+newsletterForm.addEventListener(
+'submit',
+(e) => {
 
   e.preventDefault();
 
-  alert("Thank you for subscribing!");
+  alert(
+    "Thank you for subscribing!"
+  );
 
   newsletterForm.reset();
 
 });
 
-/* =========================
+/* =========================================
 LOGIN MODAL
-========================= */
+========================================= */
 
 const loginModal =
 document.getElementById('loginModal');
@@ -1122,9 +1277,9 @@ window.addEventListener('click', (e) => {
 
 });
 
-/* =========================
+/* =========================================
 LOGIN VALIDATION
-========================= */
+========================================= */
 
 const loginForm =
 document.getElementById('loginForm');
@@ -1146,6 +1301,7 @@ loginForm.addEventListener('submit', (e) => {
     );
 
     return;
+
   }
 
   alert(`Welcome back ${email}`);
@@ -1156,16 +1312,77 @@ loginForm.addEventListener('submit', (e) => {
 
 });
 
-/* =========================
-CONTACT FORM ALERT
-========================= */
+/* =========================================
+CONTACT FORM
+========================================= */
 
 const contactForm =
 document.querySelector('.contact-form');
 
-contactForm.addEventListener('submit', () => {
+contactForm.addEventListener(
+'submit',
+() => {
 
-  alert("Message sent successfully!");
+  alert(
+    "Message sent successfully!"
+  );
+
+});
+
+/* =========================================
+DARK / LIGHT MODE
+========================================= */
+
+const themeToggle =
+document.getElementById('themeToggle');
+
+/* Load Saved Theme */
+
+if(
+localStorage.getItem('theme')
+=== 'light'
+){
+
+  document.body.classList.add(
+    'light-mode'
+  );
+
+  themeToggle.innerHTML = '☀️';
+
+}
+
+/* Toggle Theme */
+
+themeToggle.addEventListener(
+'click',
+() => {
+
+  document.body.classList.toggle(
+    'light-mode'
+  );
+
+  if(
+  document.body.classList.contains(
+  'light-mode'
+  )){
+
+    localStorage.setItem(
+      'theme',
+      'light'
+    );
+
+    themeToggle.innerHTML = '☀️';
+
+  } else {
+
+    localStorage.setItem(
+      'theme',
+      'dark'
+    );
+
+    themeToggle.innerHTML = '🌙';
+
+  }
 
 });
 
