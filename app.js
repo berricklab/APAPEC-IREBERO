@@ -1,4 +1,4 @@
-<script>
+
 
 /* =========================
 DARK/LIGHT MODE
@@ -22,7 +22,6 @@ themeToggle.addEventListener('click', () => {
 
 });
 
-</script>
 
 const cards = document.querySelectorAll('.card');
 
