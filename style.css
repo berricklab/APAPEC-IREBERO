@@ -19,6 +19,179 @@ GLOBAL RESET
   --primary-dark:#2563eb;
   --shadow:0 10px 30px rgba(0,0,0,0.3);
 }
+/* =========================
+NAVBAR STYLING
+========================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:15px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(7,17,31,0.95);
+  backdrop-filter:blur(10px);
+
+  border-bottom:1px solid rgba(255,255,255,0.08);
+
+  z-index:1000;
+  transition:0.4s ease;
+}
+
+/* LOGO */
+
+.logo{
+  font-size:1.8rem;
+  font-weight:700;
+  color:#60a5fa;
+  letter-spacing:1px;
+  cursor:pointer;
+}
+
+/* NAVIGATION */
+
+nav{
+  display:flex;
+  align-items:center;
+}
+
+nav ul{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  list-style:none;
+}
+
+nav ul li{
+  position:relative;
+}
+
+nav ul li a{
+  color:#f1f5f9;
+  text-decoration:none;
+  font-size:1rem;
+  font-weight:500;
+  transition:0.3s ease;
+  padding:5px 0;
+}
+
+/* HOVER UNDERLINE */
+
+nav ul li a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+
+  width:0%;
+  height:2px;
+
+  background:#60a5fa;
+
+  transition:0.3s ease;
+}
+
+nav ul li a:hover::after{
+  width:100%;
+}
+
+nav ul li a:hover{
+  color:#60a5fa;
+}
+
+/* LOGIN BUTTON */
+
+.login-nav-btn{
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  padding:10px 22px;
+  border-radius:30px;
+  color:white !important;
+  transition:0.3s ease;
+}
+
+.login-nav-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(59,130,246,0.4);
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle{
+  display:none;
+  font-size:2rem;
+  color:white;
+  cursor:pointer;
+}
+
+/* ACTIVE NAVBAR ON SCROLL */
+
+header.active{
+  background:#020617;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+RESPONSIVE NAVBAR
+========================= */
+
+@media(max-width:900px){
+
+  header{
+    padding:15px 5%;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    position:absolute;
+    top:100%;
+    left:0;
+
+    width:100%;
+
+    background:#0f172a;
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:0.4s ease;
+  }
+
+  nav.active{
+    max-height:500px;
+  }
+
+  nav ul{
+    flex-direction:column;
+    padding:20px 0;
+    gap:20px;
+  }
+
+  nav ul li{
+    text-align:center;
+  }
+}
+
+@media(max-width:500px){
+
+  .logo{
+    font-size:1.5rem;
+  }
+
+  nav ul li a{
+    font-size:0.95rem;
+  }
+
+  .login-nav-btn{
+    padding:8px 18px;
+  }
+}
 
 body{
   font-family:'Poppins',sans-serif;
