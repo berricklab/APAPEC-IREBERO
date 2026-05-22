@@ -1,13 +1,28 @@
-const themeToggle = document.getElementById('themeToggle');
+<script>
 
-if(themeToggle){
+/* =========================
+DARK/LIGHT MODE
+========================= */
 
-themeToggle.addEventListener('click',()=>{
+const themeToggle =
+document.getElementById('theme-toggle');
 
-document.body.classList.toggle('light-mode');
+themeToggle.addEventListener('click', () => {
+
+  document.body.classList.toggle('light-mode');
+
+  if(document.body.classList.contains('light-mode')){
+
+    themeToggle.innerHTML = '☀️';
+
+  } else {
+
+    themeToggle.innerHTML = '🌙';
+  }
 
 });
-}
+
+</script>
 
 const cards = document.querySelectorAll('.card');
 
