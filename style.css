@@ -78,6 +78,80 @@ nav ul li a{
   transition:0.3s ease;
   padding:5px 0;
 }
+/* =========================
+THEME TOGGLE BUTTON
+========================= */
+
+.theme-toggle{
+  width:45px;
+  height:45px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#2563eb;
+  color:white;
+
+  font-size:1.1rem;
+  cursor:pointer;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  transition:0.3s ease;
+}
+
+.theme-toggle:hover{
+  transform:rotate(180deg) scale(1.1);
+  background:#3b82f6;
+  box-shadow:0 8px 20px rgba(59,130,246,0.4);
+}
+/* =========================
+LIGHT MODE
+========================= */
+
+body.light-mode{
+  background:#f8fafc;
+  color:#0f172a;
+}
+
+body.light-mode header{
+  background:rgba(255,255,255,0.95);
+}
+
+body.light-mode .card,
+body.light-mode .event-card,
+body.light-mode .achievement-box,
+body.light-mode .contact-form,
+body.light-mode .contact-info,
+body.light-mode .faq-item,
+body.light-mode .login-box{
+  background:white;
+  color:#0f172a;
+}
+
+body.light-mode nav a{
+  color:#0f172a;
+}
+
+body.light-mode .card p,
+body.light-mode .about-text p,
+body.light-mode .faq-answer p{
+  color:#334155;
+}
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select{
+  background:#e2e8f0;
+  color:#0f172a;
+}
+
+body.light-mode footer{
+  background:#cbd5e1;
+  color:#0f172a;
+}
 
 /* HOVER UNDERLINE */
 
