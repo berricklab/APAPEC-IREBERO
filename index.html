@@ -88,31 +88,37 @@
 <script src="login.js"></script>
 <script src="chatbot.js"></script>
   <script type="module" src="firebase-config.js"></script>
-  <script>
-    
+<script>
 
 /* =========================
-DARK/LIGHT MODE
+WAIT FOR PAGE TO LOAD
 ========================= */
 
-const themeToggle =
-document.getElementById('theme-toggle');
+document.addEventListener("DOMContentLoaded", () => {
 
-themeToggle.addEventListener('click', () => {
+  const themeBtn =
+  document.getElementById("theme-toggle");
 
-  document.body.classList.toggle('light-mode');
+  themeBtn.addEventListener("click", () => {
 
-  if(document.body.classList.contains('light-mode')){
+    document.body.classList.toggle("light-mode");
 
-    themeToggle.innerHTML = '☀️';
+    /* CHANGE ICON */
 
-  } else {
+    if(document.body.classList.contains("light-mode")){
 
-    themeToggle.innerHTML = '🌙';
-  }
+      themeBtn.innerHTML = "☀️";
+
+    } else {
+
+      themeBtn.innerHTML = "🌙";
+
+    }
+
+  });
 
 });
-  </script>
 
+</script>
 </body>
 </html>
