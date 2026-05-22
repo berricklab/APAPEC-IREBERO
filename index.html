@@ -3,14 +3,104 @@
 <head>
 
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>APAPEC-IREBRO School</title>
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+/>
+
+<title>APAPEC-IREBRO School | Excellence In Education</title>
+
+<!-- =========================================
+SEO
+========================================= -->
+
+<meta
+  name="description"
+  content="APAPEC-IREBRO School empowers students through innovation, creativity, discipline, and academic excellence in Kigali, Rwanda."
+/>
+
+<meta
+  name="keywords"
+  content="school in Rwanda, Kigali school, APAPEC-IREBRO, education, science labs, innovation, modern learning"
+/>
+
+<meta
+  name="author"
+  content="APAPEC-IREBRO School"
+/>
+
+<meta
+  name="theme-color"
+  content="#07111f"
+/>
+
+<meta
+  property="og:title"
+  content="APAPEC-IREBRO School"
+/>
+
+<meta
+  property="og:description"
+  content="Empowering students with innovation, creativity, discipline, and excellence."
+/>
+
+<meta
+  property="og:type"
+  content="website"
+/>
+
+<meta
+  property="og:image"
+  content="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a"
+/>
+
+<meta
+  property="og:locale"
+  content="en_US"
+/>
+
+<link
+  rel="canonical"
+  href="https://yourdomain.com/"
+/>
+
+<!-- =========================================
+PERFORMANCE
+========================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet"
 />
+
+<!-- =========================================
+STRUCTURED DATA
+========================================= -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"School",
+  "name":"APAPEC-IREBRO School",
+  "address":{
+    "@type":"PostalAddress",
+    "addressLocality":"Kigali",
+    "addressCountry":"Rwanda"
+  },
+  "telephone":"+250788000000",
+  "email":"info@apapecschool.com",
+  "url":"https://yourdomain.com"
+}
+</script>
 
 <style>
 
@@ -26,13 +116,9 @@ THEME VARIABLES
   --primary:#60a5fa;
   --secondary:#17263d;
   --footer:#020617;
-  --shadow:rgba(0,0,0,0.4);
+  --shadow:rgba(0,0,0,0.35);
 
 }
-
-/* =========================================
-LIGHT MODE
-========================================= */
 
 body.light-mode{
 
@@ -42,7 +128,7 @@ body.light-mode{
   --primary:#2563eb;
   --secondary:#e2e8f0;
   --footer:#dbeafe;
-  --shadow:rgba(0,0,0,0.1);
+  --shadow:rgba(0,0,0,0.08);
 
 }
 
@@ -54,31 +140,78 @@ RESET
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
   scroll-behavior:smooth;
 }
 
 body{
+
   font-family:'Poppins',sans-serif;
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
-  transition:0.4s;
+  transition:0.3s;
+
 }
 
 /* =========================================
-FLUID TYPOGRAPHY
+ACCESSIBILITY
+========================================= */
+
+.skip-link{
+
+  position:absolute;
+  left:-9999px;
+  top:auto;
+
+}
+
+.skip-link:focus{
+
+  left:20px;
+  top:20px;
+
+  z-index:9999;
+
+  background:white;
+  color:black;
+
+  padding:12px 20px;
+  border-radius:10px;
+
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus{
+
+  outline:3px solid var(--primary);
+  outline-offset:3px;
+
+}
+
+/* =========================================
+TYPOGRAPHY
 ========================================= */
 
 h1{
-  font-size:clamp(2rem,6vw,5rem);
+  font-size:clamp(2.5rem,6vw,5rem);
 }
 
 h2{
-  font-size:clamp(1.5rem,4vw,3rem);
+  font-size:clamp(1.7rem,4vw,3rem);
+}
+
+h3{
+  font-size:1.3rem;
 }
 
 p{
-  font-size:clamp(0.95rem,2vw,1.05rem);
+  font-size:clamp(1rem,2vw,1.05rem);
+  line-height:1.8;
 }
 
 /* =========================================
@@ -89,30 +222,33 @@ SCROLLBAR
   width:10px;
 }
 
-::-webkit-scrollbar-track{
-  background:var(--bg);
-}
-
 ::-webkit-scrollbar-thumb{
   background:var(--primary);
-  border-radius:20px;
+  border-radius:30px;
 }
 
 /* =========================================
-GLOBAL IMAGES
+GLOBAL
 ========================================= */
 
 img{
-  max-width:100%;
+
   display:block;
+  max-width:100%;
+  height:auto;
+
 }
 
-.hero,
-.about img,
-.card img,
-.gallery-item img{
-  width:100%;
-  height:auto;
+section{
+  padding:100px 7%;
+}
+
+.section-title{
+
+  text-align:center;
+  color:var(--primary);
+  margin-bottom:60px;
+
 }
 
 /* =========================================
@@ -120,54 +256,49 @@ HEADER
 ========================================= */
 
 header{
+
   position:fixed;
   top:0;
   width:100%;
   z-index:1000;
-  background:rgba(7,17,31,0.92);
-  backdrop-filter:blur(10px);
-  padding:15px 7%;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
+  padding:15px 7%;
+
+  background:rgba(7,17,31,0.92);
+  backdrop-filter:blur(10px);
+
   border-bottom:1px solid rgba(255,255,255,0.08);
-  transition:0.4s;
+
 }
 
 .logo{
+
   font-size:1.8rem;
   font-weight:700;
   color:var(--primary);
+
 }
 
 nav ul{
+
   display:flex;
   gap:25px;
-  list-style:none;
   align-items:center;
+  list-style:none;
+
 }
 
 nav a{
-  color:var(--text);
+
   text-decoration:none;
+  color:var(--text);
   font-weight:500;
   transition:0.3s;
-  position:relative;
-}
 
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0%;
-  height:2px;
-  background:var(--primary);
-  transition:0.3s;
-}
-
-nav a:hover::after{
-  width:100%;
 }
 
 nav a:hover{
@@ -180,21 +311,33 @@ BUTTONS
 
 .btn,
 .login-nav-btn{
-  display:inline-block;
+
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+
   padding:12px 28px;
+
+  border:none;
   border-radius:50px;
+
+  cursor:pointer;
+
   background:linear-gradient(135deg,#3b82f6,#2563eb);
   color:white;
+
   text-decoration:none;
   font-weight:600;
-  transition:0.4s;
-  border:none;
-  cursor:pointer;
+
+  transition:0.3s;
+
 }
 
 .btn:hover,
 .login-nav-btn:hover{
+
   transform:translateY(-4px);
+
 }
 
 /* =========================================
@@ -202,19 +345,18 @@ THEME BUTTON
 ========================================= */
 
 .theme-toggle{
+
   width:45px;
   height:45px;
-  border-radius:50%;
+
   border:none;
-  cursor:pointer;
-  font-size:1rem;
+  border-radius:50%;
+
   background:#2563eb;
   color:white;
-  transition:0.4s;
-}
 
-.theme-toggle:hover{
-  transform:rotate(180deg);
+  cursor:pointer;
+
 }
 
 /* =========================================
@@ -222,28 +364,28 @@ HERO
 ========================================= */
 
 .hero{
+
   min-height:100vh;
+
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+
   text-align:center;
-  padding:120px 7% 60px;
+
+  padding:140px 20px 80px;
 
   background:
-  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.75)),
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.75)),
   url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1920&q=80')
-  center/cover;
+  center/cover no-repeat;
 
-  position:relative;
 }
 
 .hero-content{
-  max-width:850px;
-  animation:fadeIn 1.2s ease;
-}
 
-.hero h1{
-  margin-bottom:20px;
+  max-width:850px;
+
 }
 
 .hero h1 span{
@@ -251,22 +393,10 @@ HERO
 }
 
 .hero p{
-  margin-bottom:35px;
+
+  margin:30px 0;
   color:#dbeafe;
-}
 
-/* =========================================
-GENERAL SECTION
-========================================= */
-
-section{
-  padding:100px 7%;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:60px;
-  color:var(--primary);
 }
 
 /* =========================================
@@ -274,35 +404,46 @@ CARDS
 ========================================= */
 
 .cards{
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
+
 }
 
 .card{
+
   background:var(--card);
+
   border-radius:20px;
   overflow:hidden;
-  transition:0.5s;
-  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.4s;
 
   opacity:0;
-  transform:translateY(50px);
+  transform:translateY(40px);
+
 }
 
 .card.show{
+
   opacity:1;
   transform:translateY(0);
+
 }
 
 .card:hover{
+
   transform:translateY(-10px);
-  box-shadow:0 15px 35px var(--shadow);
+  box-shadow:0 15px 40px var(--shadow);
+
 }
 
 .card img{
+
   aspect-ratio:16/10;
   object-fit:cover;
+
 }
 
 .card-content{
@@ -310,12 +451,10 @@ CARDS
 }
 
 .card h3{
-  margin-bottom:10px;
-  color:var(--primary);
-}
 
-.card p{
-  color:var(--text);
+  color:var(--primary);
+  margin-bottom:10px;
+
 }
 
 /* =========================================
@@ -323,24 +462,19 @@ ABOUT
 ========================================= */
 
 .about-container{
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  align-items:center;
   gap:50px;
+  align-items:center;
+
 }
 
 .about img{
+
   border-radius:20px;
   object-fit:cover;
-}
 
-.about-text h2{
-  color:var(--primary);
-  margin-bottom:20px;
-}
-
-.about-text p{
-  line-height:1.9;
 }
 
 /* =========================================
@@ -348,24 +482,33 @@ GALLERY
 ========================================= */
 
 .gallery-grid{
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
+
 }
 
 .gallery-item{
+
   overflow:hidden;
   border-radius:20px;
+
 }
 
 .gallery-item img{
+
   aspect-ratio:1/1;
   object-fit:cover;
-  transition:0.5s;
+
+  transition:0.4s;
+
 }
 
 .gallery-item:hover img{
-  transform:scale(1.1);
+
+  transform:scale(1.08);
+
 }
 
 /* =========================================
@@ -373,31 +516,28 @@ EVENTS
 ========================================= */
 
 .event-container{
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
+
 }
 
 .event-card{
+
   background:var(--card);
+
   padding:30px;
   border-radius:20px;
-  transition:0.4s;
+
+  transition:0.3s;
+
 }
 
 .event-card:hover{
-  transform:translateY(-10px);
-}
 
-.event-card h3{
-  color:var(--primary);
-  margin-bottom:15px;
-}
+  transform:translateY(-8px);
 
-.event-card span{
-  display:inline-block;
-  margin-top:15px;
-  color:#93c5fd;
 }
 
 /* =========================================
@@ -405,32 +545,50 @@ FAQ
 ========================================= */
 
 .faq-container{
+
   max-width:900px;
   margin:auto;
+
 }
 
 .faq-item{
-  margin-bottom:20px;
+
   background:var(--card);
+
   border-radius:15px;
+  margin-bottom:20px;
+
   overflow:hidden;
+
 }
 
 .faq-question{
+
   width:100%;
+
   background:none;
   border:none;
+
   color:var(--text);
-  padding:20px;
+
   text-align:left;
+
+  padding:20px;
+
   font-size:1rem;
+  font-weight:600;
+
   cursor:pointer;
+
 }
 
 .faq-answer{
+
   max-height:0;
   overflow:hidden;
-  transition:max-height 0.4s ease;
+
+  transition:max-height 0.3s ease;
+
 }
 
 .faq-answer p{
@@ -442,35 +600,37 @@ NEWSLETTER
 ========================================= */
 
 .newsletter-box{
+
   background:linear-gradient(135deg,#1d4ed8,#2563eb);
+
   padding:60px 30px;
   border-radius:25px;
+
   text-align:center;
+
 }
 
 .newsletter-form{
+
   display:flex;
   justify-content:center;
   gap:15px;
+
   flex-wrap:wrap;
+
   margin-top:25px;
+
 }
 
 .newsletter-form input{
-  padding:15px;
-  width:320px;
-  border:none;
-  border-radius:50px;
-  outline:none;
-}
 
-.newsletter-form button{
-  padding:15px 30px;
+  width:320px;
+
+  padding:15px;
+
   border:none;
   border-radius:50px;
-  background:#07111f;
-  color:white;
-  cursor:pointer;
+
 }
 
 /* =========================================
@@ -478,52 +638,54 @@ CONTACT
 ========================================= */
 
 .contact-container{
+
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:40px;
+
 }
 
 .contact-info,
 .contact-form{
+
   background:var(--card);
+
   padding:40px;
   border-radius:20px;
+
 }
 
 .contact-form{
+
   display:flex;
   flex-direction:column;
   gap:20px;
+
 }
 
 .contact-form input,
 .contact-form textarea,
 .login-box input{
+
   padding:15px;
+
   border:none;
   border-radius:12px;
-  outline:none;
+
   background:var(--secondary);
   color:var(--text);
-}
 
-.contact-form button,
-.login-box button{
-  padding:15px;
-  border:none;
-  border-radius:12px;
-  background:#2563eb;
-  color:white;
-  cursor:pointer;
 }
 
 /* =========================================
-LOGIN MODAL
+MODAL
 ========================================= */
 
 .login-modal{
+
   position:fixed;
   inset:0;
+
   background:rgba(0,0,0,0.7);
 
   display:flex;
@@ -533,41 +695,40 @@ LOGIN MODAL
   opacity:0;
   visibility:hidden;
 
-  transition:0.4s;
-  z-index:5000;
+  transition:0.3s;
+
 }
 
 .login-modal.active{
+
   opacity:1;
   visibility:visible;
+
 }
 
 .login-box{
+
   background:var(--card);
+
   width:90%;
   max-width:420px;
+
   padding:40px;
   border-radius:25px;
+
   position:relative;
-}
 
-.login-box h2{
-  text-align:center;
-  margin-bottom:25px;
-}
-
-.login-box form{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
 }
 
 .close-btn{
+
   position:absolute;
-  top:10px;
+  top:15px;
   right:20px;
+
   font-size:2rem;
   cursor:pointer;
+
 }
 
 /* =========================================
@@ -575,108 +736,40 @@ FOOTER
 ========================================= */
 
 footer{
+
   background:var(--footer);
+
   text-align:center;
   padding:30px;
+
 }
 
 /* =========================================
-ANIMATIONS
+RESPONSIVE
 ========================================= */
-
-.floating{
-  animation:floating 4s ease-in-out infinite;
-}
-
-@keyframes floating{
-  0%{ transform:translateY(0px); }
-  50%{ transform:translateY(-15px); }
-  100%{ transform:translateY(0px); }
-}
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* =========================================
-RESPONSIVE DESIGN
-========================================= */
-
-@media (min-width:1400px){
-
-  body{
-    font-size:18px;
-  }
-
-  section{
-    padding:120px 10%;
-  }
-
-}
-
-@media (max-width:992px){
-
-  header{
-    padding:15px 5%;
-  }
-
-  .hero{
-    padding-top:160px;
-  }
-
-  .about-container{
-    grid-template-columns:1fr;
-  }
-
-  .about-text{
-    text-align:center;
-  }
-
-}
 
 @media (max-width:768px){
 
   header{
+
     flex-direction:column;
     gap:20px;
-  }
 
-  nav{
-    width:100%;
   }
 
   nav ul{
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-  }
 
-  .hero{
-    min-height:90vh;
-    padding:140px 20px 80px;
+    flex-wrap:wrap;
+    justify-content:center;
+
   }
 
   section{
     padding:80px 20px;
   }
 
-  .cards,
-  .gallery-grid,
-  .event-container,
-  .contact-container{
-    grid-template-columns:1fr;
-  }
-
   .newsletter-form{
     flex-direction:column;
-    align-items:center;
   }
 
   .newsletter-form input,
@@ -686,37 +779,20 @@ RESPONSIVE DESIGN
 
 }
 
-@media (max-width:480px){
-
-  .logo{
-    font-size:1.4rem;
-  }
-
-  .card-content{
-    padding:20px;
-  }
-
-  .newsletter-box{
-    padding:40px 20px;
-  }
-
-}
-
 /* =========================================
-PERFORMANCE
+REDUCED MOTION
 ========================================= */
 
-.card,
-.gallery-item img,
-.btn,
-.event-card{
-  will-change:transform;
-}
+@media (prefers-reduced-motion: reduce){
 
-button,
-.btn,
-nav a{
-  -webkit-tap-highlight-color:transparent;
+  *{
+
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+
+  }
+
 }
 
 </style>
@@ -725,16 +801,25 @@ nav a{
 <body>
 
 <!-- =========================================
+ACCESSIBILITY
+========================================= -->
+
+<a href="#main-content" class="skip-link">
+Skip to main content
+</a>
+
+<!-- =========================================
 HEADER
 ========================================= -->
 
 <header>
 
-<div class="logo floating">
+<div class="logo">
 APAPEC-IREBRO
 </div>
 
-<nav>
+<nav aria-label="Primary navigation">
+
 <ul>
 
 <li><a href="#home">Home</a></li>
@@ -747,25 +832,42 @@ APAPEC-IREBRO
 <li><a href="#contact-section">Contact</a></li>
 
 <li>
-<button id="themeToggle" class="theme-toggle">
+
+<button
+  id="themeToggle"
+  class="theme-toggle"
+  aria-label="Toggle dark mode"
+>
 🌙
 </button>
+
 </li>
 
 <li>
-<a href="#" class="login-nav-btn" id="openLogin">
+
+<button
+  type="button"
+  class="login-nav-btn"
+  id="openLogin"
+>
 Login
-</a>
+</button>
+
 </li>
 
 </ul>
+
 </nav>
 
 </header>
 
 <!-- =========================================
-HERO
+MAIN
 ========================================= -->
+
+<main id="main-content">
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -788,9 +890,7 @@ Explore More
 
 </section>
 
-<!-- =========================================
-SERVICES
-========================================= -->
+<!-- SERVICES -->
 
 <section id="services">
 
@@ -801,50 +901,98 @@ Our Services
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80">
+
+<img
+src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80"
+alt="Modern school library"
+loading="lazy"
+decoding="async"
+width="1200"
+height="800"
+/>
+
 <div class="card-content">
+
 <h3>Modern Library</h3>
-<p>Access thousands of educational resources.</p>
+
+<p>
+Access thousands of educational resources.
+</p>
+
 </div>
+
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=1200&q=80">
+
+<img
+src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=1200&q=80"
+alt="Science laboratory"
+loading="lazy"
+decoding="async"
+width="1200"
+height="800"
+/>
+
 <div class="card-content">
+
 <h3>Science Labs</h3>
-<p>Hands-on innovation and experimentation.</p>
+
+<p>
+Hands-on innovation and experimentation.
+</p>
+
 </div>
+
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80">
+
+<img
+src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=80"
+alt="Sports facilities"
+loading="lazy"
+decoding="async"
+width="1200"
+height="800"
+/>
+
 <div class="card-content">
+
 <h3>Sports Facilities</h3>
-<p>Healthy lifestyle and athletics programs.</p>
+
+<p>
+Healthy lifestyle and athletics programs.
+</p>
+
 </div>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- =========================================
-ABOUT
-========================================= -->
+<!-- ABOUT -->
 
 <section class="about" id="about">
 
 <div class="about-container">
 
 <img
-class="floating"
 src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80"
-alt="Students"
+alt="Students learning together"
+loading="lazy"
+decoding="async"
+width="1400"
+height="900"
 />
 
-<div class="about-text">
+<div>
 
-<h2>About Our School</h2>
+<h2>
+About Our School
+</h2>
 
 <p>
 We nurture future leaders through education,
@@ -857,9 +1005,7 @@ technology, creativity, and innovation.
 
 </section>
 
-<!-- =========================================
-TEACHERS
-========================================= -->
+<!-- TEACHERS -->
 
 <section id="teachers">
 
@@ -870,36 +1016,56 @@ Meet Our Teachers
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80">
+
+<img
+src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
+alt="Mathematics teacher"
+loading="lazy"
+decoding="async"
+width="1200"
+height="800"
+/>
+
 <div class="card-content">
+
 <h3>Dr. Jane Doe</h3>
-<p>Mathematics Specialist</p>
+
+<p>
+Mathematics Specialist
+</p>
+
 </div>
+
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80">
+
+<img
+src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80"
+alt="English literature teacher"
+loading="lazy"
+decoding="async"
+width="1200"
+height="800"
+/>
+
 <div class="card-content">
+
 <h3>Mr. John Smith</h3>
-<p>English Literature Educator</p>
-</div>
+
+<p>
+English Literature Educator
+</p>
+
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=1200&q=80">
-<div class="card-content">
-<h3>Mrs. Mary Johnson</h3>
-<p>Science Teacher</p>
-</div>
 </div>
 
 </div>
 
 </section>
 
-<!-- =========================================
-GALLERY
-========================================= -->
+<!-- GALLERY -->
 
 <section id="gallery">
 
@@ -910,28 +1076,36 @@ School Gallery
 <div class="gallery-grid">
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80">
+
+<img
+src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+alt="Students in classroom"
+loading="lazy"
+decoding="async"
+width="1200"
+height="1200"
+/>
+
 </div>
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80">
-</div>
 
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80">
-</div>
+<img
+src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80"
+alt="Students studying together"
+loading="lazy"
+decoding="async"
+width="1200"
+height="1200"
+/>
 
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80">
 </div>
 
 </div>
 
 </section>
 
-<!-- =========================================
-EVENTS
-========================================= -->
+<!-- EVENTS -->
 
 <section id="events">
 
@@ -942,30 +1116,42 @@ Upcoming Events
 <div class="event-container">
 
 <div class="event-card">
-<h3>Science Fair 2026</h3>
-<p>Explore student scientific projects.</p>
-<span>June 15, 2026</span>
+
+<h3>
+Science Fair 2026
+</h3>
+
+<p>
+Explore student scientific projects.
+</p>
+
+<p>
+June 15, 2026
+</p>
+
 </div>
 
 <div class="event-card">
-<h3>Sports Competition</h3>
-<p>Inter-school sports and teamwork activities.</p>
-<span>July 8, 2026</span>
-</div>
 
-<div class="event-card">
-<h3>Graduation Ceremony</h3>
-<p>Celebrating academic excellence.</p>
-<span>August 20, 2026</span>
+<h3>
+Sports Competition
+</h3>
+
+<p>
+Inter-school sports and teamwork activities.
+</p>
+
+<p>
+July 8, 2026
+</p>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- =========================================
-FAQ
-========================================= -->
+<!-- FAQ -->
 
 <section id="faq">
 
@@ -978,13 +1164,17 @@ Frequently Asked Questions
 <div class="faq-item">
 
 <button class="faq-question">
+
 How can I apply?
+
 </button>
 
 <div class="faq-answer">
+
 <p>
 Visit our office or apply online through the website.
 </p>
+
 </div>
 
 </div>
@@ -992,13 +1182,17 @@ Visit our office or apply online through the website.
 <div class="faq-item">
 
 <button class="faq-question">
+
 Do you offer extracurricular activities?
+
 </button>
 
 <div class="faq-answer">
+
 <p>
 Yes, including sports, debates, arts, and clubs.
 </p>
+
 </div>
 
 </div>
@@ -1007,9 +1201,7 @@ Yes, including sports, debates, arts, and clubs.
 
 </section>
 
-<!-- =========================================
-NEWSLETTER
-========================================= -->
+<!-- NEWSLETTER -->
 
 <section id="newsletter">
 
@@ -1029,9 +1221,10 @@ Stay updated with our latest news and events.
 type="email"
 placeholder="Enter your email"
 required
+aria-label="Email address"
 />
 
-<button type="submit">
+<button type="submit" class="btn">
 Subscribe
 </button>
 
@@ -1041,9 +1234,7 @@ Subscribe
 
 </section>
 
-<!-- =========================================
-CONTACT
-========================================= -->
+<!-- CONTACT -->
 
 <section id="contact-section">
 
@@ -1055,7 +1246,9 @@ Contact Us
 
 <div class="contact-info">
 
-<h3>Get In Touch</h3>
+<h3>
+Get In Touch
+</h3>
 
 <p>Email: info@apapecschool.com</p>
 <p>Phone: +250 788 000 000</p>
@@ -1071,26 +1264,46 @@ method="POST"
 
 <input
 type="text"
-name="name"
-placeholder="Your Name"
-required
+name="_honey"
+style="display:none"
 />
+
+<label for="name">
+Your Name
+</label>
+
+<input
+type="text"
+id="name"
+name="name"
+required
+autocomplete="name"
+/>
+
+<label for="contact-email">
+Your Email
+</label>
 
 <input
 type="email"
+id="contact-email"
 name="email"
-placeholder="Your Email"
 required
+autocomplete="email"
 />
 
+<label for="message">
+Your Message
+</label>
+
 <textarea
+id="message"
 name="message"
 rows="6"
-placeholder="Your Message"
 required
 ></textarea>
 
-<button type="submit">
+<button type="submit" class="btn">
 Send Message
 </button>
 
@@ -1100,51 +1313,68 @@ Send Message
 
 </section>
 
-<!-- =========================================
-FOOTER
-========================================= -->
+</main>
+
+<!-- FOOTER -->
 
 <footer>
 
 <p>
-© 2026 APAPEC-IREBRO School | All Rights Reserved
+© 2026 APAPEC-IREBRO School |
+All Rights Reserved
 </p>
 
 </footer>
 
-<!-- =========================================
-LOGIN MODAL
-========================================= -->
+<!-- LOGIN MODAL -->
 
-<div class="login-modal" id="loginModal">
+<div
+class="login-modal"
+id="loginModal"
+role="dialog"
+aria-modal="true"
+aria-labelledby="loginTitle"
+>
 
 <div class="login-box">
 
-<span class="close-btn" id="closeLogin">
+<span
+class="close-btn"
+id="closeLogin"
+aria-label="Close login modal"
+>
 &times;
 </span>
 
-<h2>
+<h2 id="loginTitle">
 Student Login
 </h2>
 
 <form id="loginForm">
 
+<label for="email">
+Email
+</label>
+
 <input
 type="email"
 id="email"
-placeholder="Enter Email"
 required
+autocomplete="email"
 />
+
+<label for="password">
+Password
+</label>
 
 <input
 type="password"
 id="password"
-placeholder="Enter Password"
 required
+autocomplete="current-password"
 />
 
-<button type="submit">
+<button type="submit" class="btn">
 Login
 </button>
 
@@ -1157,65 +1387,67 @@ Login
 <script>
 
 /* =========================================
-SCROLL REVEAL
+INTERSECTION OBSERVER
 ========================================= */
 
 const cards =
 document.querySelectorAll('.card');
 
-window.addEventListener(
-'scroll',
-revealCards
-);
+const observer =
+new IntersectionObserver(
 
-function revealCards(){
+(entries)=>{
 
-  const triggerBottom =
-  window.innerHeight * 0.85;
+entries.forEach(entry=>{
 
-  cards.forEach(card => {
+if(entry.isIntersecting){
 
-    const cardTop =
-    card.getBoundingClientRect().top;
+entry.target.classList.add('show');
 
-    if(cardTop < triggerBottom){
-
-      card.classList.add('show');
-
-    }
-
-  });
+observer.unobserve(entry.target);
 
 }
 
-revealCards();
+});
+
+},
+{
+threshold:0.1
+}
+
+);
+
+cards.forEach(card=>{
+
+observer.observe(card);
+
+});
 
 /* =========================================
 FAQ TOGGLE
 ========================================= */
 
-const faqQuestions =
-document.querySelectorAll('.faq-question');
+document
+.querySelectorAll('.faq-question')
+.forEach(question=>{
 
-faqQuestions.forEach(question => {
+question.addEventListener('click',()=>{
 
-  question.addEventListener('click', () => {
+const answer =
+question.nextElementSibling;
 
-    const answer =
-    question.nextElementSibling;
+if(answer.style.maxHeight){
 
-    if(answer.style.maxHeight){
+answer.style.maxHeight = null;
 
-      answer.style.maxHeight = null;
+}else{
 
-    } else {
+answer.style.maxHeight =
+answer.scrollHeight + 'px';
 
-      answer.style.maxHeight =
-      answer.scrollHeight + "px";
+}
 
-    }
-
-  });
+});
 
 });
 
@@ -1228,15 +1460,15 @@ document.querySelector('.newsletter-form');
 
 newsletterForm.addEventListener(
 'submit',
-(e) => {
+(e)=>{
 
-  e.preventDefault();
+e.preventDefault();
 
-  alert(
-    "Thank you for subscribing!"
-  );
+alert(
+'Thank you for subscribing!'
+);
 
-  newsletterForm.reset();
+newsletterForm.reset();
 
 });
 
@@ -1253,136 +1485,91 @@ document.getElementById('openLogin');
 const closeLogin =
 document.getElementById('closeLogin');
 
-openLogin.addEventListener('click', (e) => {
+openLogin.addEventListener('click',()=>{
 
-  e.preventDefault();
-
-  loginModal.classList.add('active');
+loginModal.classList.add('active');
 
 });
 
-closeLogin.addEventListener('click', () => {
+closeLogin.addEventListener('click',()=>{
 
-  loginModal.classList.remove('active');
+loginModal.classList.remove('active');
 
 });
 
-window.addEventListener('click', (e) => {
+window.addEventListener('click',(e)=>{
 
-  if(e.target === loginModal){
+if(e.target === loginModal){
 
-    loginModal.classList.remove('active');
+loginModal.classList.remove('active');
 
-  }
+}
 
 });
 
 /* =========================================
-LOGIN VALIDATION
+LOGIN FORM
 ========================================= */
 
 const loginForm =
 document.getElementById('loginForm');
 
-loginForm.addEventListener('submit', (e) => {
-
-  e.preventDefault();
-
-  const email =
-  document.getElementById('email').value;
-
-  const password =
-  document.getElementById('password').value;
-
-  if(password.length < 6){
-
-    alert(
-      "Password must be at least 6 characters"
-    );
-
-    return;
-
-  }
-
-  alert(`Welcome back ${email}`);
-
-  loginModal.classList.remove('active');
-
-  loginForm.reset();
-
-});
-
-/* =========================================
-CONTACT FORM
-========================================= */
-
-const contactForm =
-document.querySelector('.contact-form');
-
-contactForm.addEventListener(
+loginForm.addEventListener(
 'submit',
-() => {
+(e)=>{
 
-  alert(
-    "Message sent successfully!"
-  );
+e.preventDefault();
+
+const password =
+document.getElementById('password').value;
+
+if(password.length < 6){
+
+alert(
+'Password must be at least 6 characters.'
+);
+
+return;
+
+}
+
+alert('Login successful');
+
+loginModal.classList.remove('active');
+
+loginForm.reset();
 
 });
 
 /* =========================================
-DARK / LIGHT MODE
+THEME TOGGLE
 ========================================= */
 
 const themeToggle =
 document.getElementById('themeToggle');
 
-/* Load Saved Theme */
+if(localStorage.getItem('theme') === 'light'){
 
-if(
-localStorage.getItem('theme')
-=== 'light'
-){
+document.body.classList.add('light-mode');
 
-  document.body.classList.add(
-    'light-mode'
-  );
-
-  themeToggle.innerHTML = '☀️';
+themeToggle.textContent = '☀️';
 
 }
 
-/* Toggle Theme */
+themeToggle.addEventListener('click',()=>{
 
-themeToggle.addEventListener(
-'click',
-() => {
+document.body.classList.toggle('light-mode');
 
-  document.body.classList.toggle(
-    'light-mode'
-  );
+const isLight =
+document.body.classList.contains('light-mode');
 
-  if(
-  document.body.classList.contains(
-  'light-mode'
-  )){
+localStorage.setItem(
+'theme',
+isLight ? 'light' : 'dark'
+);
 
-    localStorage.setItem(
-      'theme',
-      'light'
-    );
-
-    themeToggle.innerHTML = '☀️';
-
-  } else {
-
-    localStorage.setItem(
-      'theme',
-      'dark'
-    );
-
-    themeToggle.innerHTML = '🌙';
-
-  }
+themeToggle.textContent =
+isLight ? '☀️' : '🌙';
 
 });
 
