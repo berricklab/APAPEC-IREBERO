@@ -1,0 +1,58 @@
+*{
+color:white;
+cursor:pointer;
+}
+
+.login-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.7);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+visibility:hidden;
+transition:0.4s;
+}
+
+.login-modal.active{
+opacity:1;
+visibility:visible;
+}
+
+.login-box{
+background:#0f1c2e;
+padding:40px;
+border-radius:20px;
+width:90%;
+max-width:400px;
+}
+
+.login-box form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.login-box input,
+.login-box button{
+padding:15px;
+border:none;
+border-radius:10px;
+}
+
+@media(max-width:768px){
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
