@@ -1,0 +1,15 @@
+{
+"name":"APAPEC-IREBRO School",
+"short_name":"APAPEC",
+"start_url":"index.html",
+"display":"standalone",
+"background_color":"#07111f",
+"theme_color":"#2563eb",
+"icons":[
+{
+"src":"assets/icons/icon-192.png",
+"sizes":"192x192",
+"type":"image/png"
+}
+]
+}
